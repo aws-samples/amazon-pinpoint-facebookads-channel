@@ -1,0 +1,16 @@
+dist/
+*.d.ts
+node_modules
+_templates
+cdk.out.dev
+cdk.out
+.out
+docs/
+
+tsconfig.eslint.json
+
+# TODO: uncomment this after resolving onboarding app build
+prototype/tools
+
+dependency-check-bin/
+reports/

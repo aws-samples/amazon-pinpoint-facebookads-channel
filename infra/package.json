@@ -1,0 +1,38 @@
+{
+  "name": "infra",
+  "version": "0.1.0",
+  "author": "ASEAN Prototyping Team",
+  "license": "MIT-0",
+  "bin": {
+    "infra": "bin/infra.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "bootstrap": "cdk bootstrap",
+    "dev:cdk": "cdk  --output cdk.out.dev",
+    "dev:deploy:all": "yarn run dev:cdk deploy --require-approval never '*'",
+    "dev:synth": "yarn dev:cdk synth",
+    "cfn-nag": "cfn_nag_scan --input-path=./cdk.out.dev/ --template-pattern .*\\.template\\.json --output-format json > ../reports/cfn-nag-report.json",
+    "cfn-nag:install": "brew install ruby brew-gem && brew gem install cfn-nag",
+    "review": "yarn cfn-nag"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.2",
+    "@types/node": "10.17.27",
+    "@types/prettier": "2.6.0",
+    "aws-cdk": "2.33.0",
+    "cdk-nag": "^2.15.24",
+    "esbuild": "^0.14.50",
+    "ts-node": "^10.9.1",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.33.0",
+    "axios": "^0.27.2",
+    "config": "^3.3.7",
+    "constructs": "^10.0.0"
+  }
+}

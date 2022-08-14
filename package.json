@@ -1,0 +1,48 @@
+{
+  "name": "play-amazon-pinpoint-facebookads-channel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "ASEAN Prototyping Team",
+  "license": "MIT-0",
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git.amazon.com/pkg/PLAY-amazon-pinpoint-facebookads-channel"
+  },
+  "scripts": {
+    "postinstall": "husky install",
+    "build:all": "yarn build:infra",
+    "build:infra": "cd infra && yarn build",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "license:disclaimer": "yarn licenses --prod --silent --no-progress  generate-disclaimer > ./THIRDPARTY_LICENSES_DETAILS.txt",
+    "review:all": "yarn review:infra && yarn review:audit",
+    "review:infra": "cd infra && yarn review",
+    "review:audit": "yarn audit --json | npx yarn-audit-html --output ./reports/yarn-audit.html"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.30",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "aws-sdk": "^2.1133.0",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-recommended": "^4.1.0",
+    "eslint-plugin-header": "^3.1.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-license-header": "^0.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
+    "husky": "^7.0.4",
+    "lerna": "^5.1.8",
+    "lint-staged": "^12.4.1",
+    "prettier": "2.6.2",
+    "typescript": "^4.7.4"
+  }
+}
