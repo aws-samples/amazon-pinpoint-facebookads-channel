@@ -1,5 +1,5 @@
 {
-  "name": "play-amazon-pinpoint-facebookads-channel",
+  "name": "@aws-samples/amazon-pinpoint-facebookads-channel",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,10 +7,6 @@
   "license": "MIT-0",
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  },
-  "repository": {
-    "type": "git",
-    "url": "ssh://git.amazon.com/pkg/PLAY-amazon-pinpoint-facebookads-channel"
   },
   "scripts": {
     "postinstall": "husky install",
